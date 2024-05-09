@@ -1,8 +1,6 @@
 package com.linkplus.banking.system.service;
 import com.linkplus.banking.system.entity.Account;
 import com.linkplus.banking.system.entity.Transaction;
-import com.linkplus.banking.system.exceptions.AccountNotFoundException;
-import com.linkplus.banking.system.exceptions.InsufficientBalanceException;
 import com.linkplus.banking.system.repo.ITransactionRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
