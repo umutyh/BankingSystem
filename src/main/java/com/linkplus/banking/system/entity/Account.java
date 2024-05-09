@@ -1,12 +1,10 @@
 package com.linkplus.banking.system.entity;
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Id;
 import java.math.BigDecimal;
-import java.util.List;
+
 
 @Entity
 public class Account {
@@ -17,13 +15,6 @@ public class Account {
     private String accountNumber;
     private String name;
     private BigDecimal balance;
-
-    @OneToMany(mappedBy = "sender")
-    @JsonBackReference
-    private List<Transaction> sentTransactions;
-
-    @OneToMany(mappedBy = "recipient")
-    private List<Transaction> receivedTransactions;
 
     public Long getId() {
         return id;
@@ -48,23 +39,6 @@ public class Account {
     public void setBalance(BigDecimal balance) {
         this.balance = balance;
     }
-
-    public List<Transaction> getSentTransactions() {
-        return sentTransactions;
-    }
-
-    public void setSentTransactions(List<Transaction> sentTransactions) {
-        this.sentTransactions = sentTransactions;
-    }
-
-    public List<Transaction> getReceivedTransactions() {
-        return receivedTransactions;
-    }
-
-    public void setReceivedTransactions(List<Transaction> receivedTransactions) {
-        this.receivedTransactions = receivedTransactions;
-    }
-
     public String getName() {
         return name;
     }
